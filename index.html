@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dr. Ahmed Clinic — Faisalabad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #f9faf7;
+      --dark: #0d1f0f;
+      --green: #1a4a1e;
+      --green-mid: #2d6e33;
+      --green-light: #e8f0e9;
+      --green-accent: #3a8c42;
+      --gold: #b8973a;
+      --text: #1a1a1a;
+      --muted: #5a6b5c;
+      --white: #ffffff;
+      --border: #d4e0d5;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 60px;
+      background: rgba(249,250,247,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo span { color: var(--green-accent); font-style: italic; }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--green); }
+
+    .nav-cta {
+      background: var(--green) !important;
+      color: var(--white) !important;
+      padding: 10px 24px;
+      border-radius: 100px;
+      font-weight: 500 !important;
+      font-size: 0.88rem !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--green-mid) !important; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 120px 60px 80px;
+      gap: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 50%;
+      height: 100%;
+      background: var(--green);
+      z-index: 0;
+    }
+
+    .hero-left { position: relative; z-index: 2; }
+    .hero-right {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green-accent);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 28px; height: 1px;
+      background: var(--green-accent);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 4.5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--dark);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--green-accent);
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 460px;
+      margin-bottom: 40px;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 100px;
+      font-weight: 500;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--green-mid); transform: translateY(-1px); }
+
+    .btn-outline {
+      color: var(--green);
+      padding: 14px 28px;
+      border-radius: 100px;
+      border: 1.5px solid var(--green);
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-outline:hover { background: var(--green); color: var(--white); }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 56px;
+      padding-top: 36px;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1;
+    }
+
+    .stat-num span { color: var(--green-accent); }
+    .stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 6px; letter-spacing: 0.04em; }
+
+    /* Right side card */
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 40px 36px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      width: 100%;
+      max-width: 340px;
+    }
+
+    .hero-card-avatar {
+      width: 90px; height: 90px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .hero-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .hero-card-spec { color: rgba(255,255,255,0.6); font-size: 0.82rem; margin-bottom: 24px; }
+
+    .hero-card-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.85);
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      margin: 4px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .hero-card-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+      margin: 24px 0;
+    }
+
+    .hero-card-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.82rem;
+    }
+
+    .status-dot {
+      width: 8px; height: 8px;
+      background: #4ade80;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* SECTIONS */
+    section { padding: 100px 60px; }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green-accent);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-eyebrow::before {
+      content: '';
+      width: 24px; height: 1px;
+      background: var(--green-accent);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: 0.97rem;
+      max-width: 480px;
+      line-height: 1.75;
+    }
+
+    /* SERVICES */
+    #services { background: var(--white); }
+
+    .services-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+      gap: 40px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 28px;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      background: var(--green);
+      border-color: var(--green);
+      transform: translateY(-4px);
+    }
+
+    .service-card:hover h3,
+    .service-card:hover p { color: var(--white); }
+    .service-card:hover .service-icon { background: rgba(255,255,255,0.15); }
+
+    .service-icon {
+      width: 50px; height: 50px;
+      background: var(--green-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 22px;
+      transition: background 0.3s;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+
+    .service-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.65; transition: color 0.3s; }
+
+    /* DOCTOR */
+    #doctor {
+      background: var(--green-light);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .doctor-visual { position: relative; }
+
+    .doctor-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 48px 36px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(26,74,30,0.1);
+    }
+
+    .doctor-avatar {
+      width: 96px; height: 96px;
+      background: linear-gradient(135deg, var(--green), var(--green-mid));
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+    }
+
+    .doctor-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .doctor-spec { color: var(--green-accent); font-size: 0.82rem; font-weight: 500; margin-bottom: 24px; letter-spacing: 0.04em; }
+
+    .doctor-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+
+    .tag {
+      background: var(--green-light);
+      color: var(--green);
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border: 1px solid var(--border);
+    }
+
+    .doctor-info h2 { margin-bottom: 18px; }
+    .doctor-info > p { color: var(--muted); line-height: 1.8; margin-bottom: 32px; font-size: 0.95rem; }
+
+    .qualifications { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+
+    .qualifications li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .qualifications li::before {
+      content: '✓';
+      color: var(--green-accent);
+      font-weight: 700;
+      font-size: 0.78rem;
+      background: var(--green-light);
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* TIMING */
+    #timing { background: var(--white); }
+
+    .timing-header { margin-bottom: 52px; }
+
+    .timing-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 12px;
+    }
+
+    .timing-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    .timing-card.open { border-color: var(--green); }
+
+    .timing-day {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      color: var(--dark);
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .timing-time { color: var(--green-accent); font-size: 0.75rem; font-weight: 500; line-height: 1.7; }
+    .timing-closed { color: var(--muted); font-size: 0.8rem; }
+
+    /* CONTACT */
+    #contact {
+      background: var(--green-light);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-info h2 { margin-bottom: 14px; }
+    .contact-info > p { color: var(--muted); margin-bottom: 40px; font-size: 0.95rem; line-height: 1.75; }
+
+    .contact-items { display: flex; flex-direction: column; gap: 22px; }
+
+    .contact-item { display: flex; align-items: flex-start; gap: 16px; }
+
+    .contact-icon {
+      width: 42px; height: 42px;
+      background: var(--white);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(26,74,30,0.08);
+    }
+
+    .contact-item h4 { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
+    .contact-item p { color: var(--dark); font-size: 0.9rem; }
+
+    .contact-form {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 44px 40px;
+      box-shadow: 0 20px 60px rgba(26,74,30,0.08);
+    }
+
+    .contact-form h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 28px;
+    }
+
+    .form-group { margin-bottom: 18px; }
+
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 7px;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: var(--dark);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--green); }
+
+    .form-group textarea { height: 90px; resize: none; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--green);
+      color: var(--white);
+      border: none;
+      padding: 14px;
+      border-radius: 100px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .form-submit:hover { background: var(--green-mid); }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      padding: 40px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .footer-logo span { color: var(--green-accent); font-style: italic; }
+    .footer-copy { color: rgba(255,255,255,0.4); font-size: 0.78rem; }
+
+    .footer-whatsapp {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    .footer-whatsapp:hover { opacity: 0.85; }
+
+    /* RESPONSIVE */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--dark);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 65px; left: 0; right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px 20px;
+      flex-direction: column;
+      gap: 0;
+      z-index: 99;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: var(--dark);
+      text-decoration: none;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+    .mobile-menu a.mobile-cta {
+      border-bottom: none;
+      background: var(--green);
+      color: var(--white);
+      text-align: center;
+      border-radius: 100px;
+      padding: 13px 20px;
+      margin-top: 12px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 36px; }
+      .hero::before { display: none; }
+      .hero-right { background: var(--green); border-radius: 16px; padding: 32px 24px; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero-stats { gap: 24px; flex-wrap: wrap; }
+
+      section { padding: 60px 24px; }
+      #doctor { grid-template-columns: 1fr; gap: 36px; padding: 60px 24px; }
+      #contact { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .services-top { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .timing-grid { grid-template-columns: repeat(4, 1fr); }
+      .contact-form { padding: 32px 24px; }
+      footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
+    }
+
+    @media (max-width: 500px) {
+      nav { padding: 14px 20px; }
+      .hero { padding: 90px 20px 50px; }
+      .hero h1 { font-size: 2rem; }
+      .hero-actions { flex-direction: column; align-items: stretch; text-align: center; }
+      .btn-primary, .btn-outline { text-align: center; }
+      .hero-stats { gap: 20px; }
+      .stat-num { font-size: 1.7rem; }
+      section { padding: 50px 20px; }
+      #doctor, #contact { padding: 50px 20px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .timing-grid { grid-template-columns: repeat(2, 1fr); }
+      .section-title { font-size: 1.7rem; }
+      .contact-form { padding: 24px 18px; }
+      .hero-card { padding: 28px 20px; }
+      .doctor-card { padding: 36px 24px; }
+      footer { padding: 28px 20px; }
+      .footer-whatsapp { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Dr. <span>Ahmed</span> Clinic</div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#doctor">Doctor</a></li>
+      <li><a href="#timing">Timings</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#appointment-form" class="nav-cta">Book Appointment</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" onclick="closeMenu()">Services</a>
+    <a href="#doctor" onclick="closeMenu()">Doctor</a>
+    <a href="#timing" onclick="closeMenu()">Timings</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+    <a href="#appointment-form" class="mobile-cta" onclick="closeMenu()">Book Appointment</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('hamburger').classList.toggle('active');
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+    function closeMenu() {
+      document.getElementById('hamburger').classList.remove('active');
+      document.getElementById('mobileMenu').classList.remove('open');
+    }
+  </script>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Faisalabad's Trusted Clinic</div>
+      <h1>Your Health<br/>Deserves <em>Expert</em><br/>Care.</h1>
+      <p class="hero-desc">Dr. Ahmed Clinic offers compassionate, professional medical care — from routine checkups to specialist consultations, all under one roof.</p>
+      <div class="hero-actions">
+        <a href="#appointment-form" class="btn-primary">Book Appointment</a>
+        <a href="https://wa.me/923001234567" class="btn-outline">💬 WhatsApp</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">12<span>+</span></div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div>
+          <div class="stat-num">8k<span>+</span></div>
+          <div class="stat-label">Patients Treated</div>
+        </div>
+        <div>
+          <div class="stat-num">6<span> days</span></div>
+          <div class="stat-label">Open Per Week</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="hero-card-avatar">👨‍⚕️</div>
+        <h3>Dr. Ahsan Ahmed</h3>
+        <div class="hero-card-spec">MBBS · FCPS Internal Medicine</div>
+        <div>
+          <span class="hero-card-badge">General Medicine</span>
+          <span class="hero-card-badge">Cardiology</span>
+          <span class="hero-card-badge">Diabetes</span>
+          <span class="hero-card-badge">Preventive Care</span>
+        </div>
+        <div class="hero-card-divider"></div>
+        <div class="hero-card-status">
+          <div class="status-dot"></div>
+          Accepting patients today
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="services-top">
+      <div>
+        <div class="section-eyebrow">What We Offer</div>
+        <h2 class="section-title">Our Medical Services</h2>
+      </div>
+      <p class="section-sub">Comprehensive care under one roof — from routine checkups to specialist consultations.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🩺</div>
+        <h3>General Consultation</h3>
+        <p>Diagnosis and treatment for fever, flu, infections, and everyday health issues.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">❤️</div>
+        <h3>Cardiac Checkup</h3>
+        <p>ECG, blood pressure monitoring, and early detection of heart-related conditions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🩸</div>
+        <h3>Lab Tests</h3>
+        <p>In-clinic blood tests, sugar levels, urine analysis — results within hours.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💉</div>
+        <h3>Vaccination</h3>
+        <p>Child and adult immunizations as per national and international health guidelines.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🫁</div>
+        <h3>Chest & Respiratory</h3>
+        <p>Treatment for asthma, chest infections, shortness of breath, and related conditions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📋</div>
+        <h3>Medical Certificates</h3>
+        <p>Fitness certificates for employment, school, and government requirements.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTOR -->
+  <section id="doctor">
+    <div class="doctor-visual">
+      <div class="doctor-card">
+        <div class="doctor-avatar">👨‍⚕️</div>
+        <div class="doctor-name">Dr. Ahsan Ahmed</div>
+        <div class="doctor-spec">MBBS · FCPS (Internal Medicine)</div>
+        <div class="doctor-tags">
+          <span class="tag">General Medicine</span>
+          <span class="tag">Cardiology</span>
+          <span class="tag">Diabetes Care</span>
+          <span class="tag">Preventive Health</span>
+        </div>
+      </div>
+    </div>
+    <div class="doctor-info">
+      <div class="section-eyebrow">Meet the Doctor</div>
+      <h2 class="section-title">12 Years of Trusted Medical Care</h2>
+      <p>Dr. Ahsan Ahmed is a qualified Internal Medicine specialist with over a decade of experience treating patients across Faisalabad. He believes in patient-first care — clear communication, accurate diagnosis, and effective treatment.</p>
+      <ul class="qualifications">
+        <li>MBBS from King Edward Medical University, Lahore</li>
+        <li>FCPS in Internal Medicine — CPSP Certified</li>
+        <li>Trained at Services Hospital, Lahore</li>
+        <li>Fluent in Urdu, Punjabi & English</li>
+        <li>Dedicated to affordable, quality healthcare</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TIMING -->
+  <section id="timing">
+    <div class="timing-header">
+      <div class="section-eyebrow">Visit Us</div>
+      <h2 class="section-title">Clinic Timings</h2>
+      <p class="section-sub">Walk-ins welcome. For guaranteed slots, book an appointment in advance.</p>
+    </div>
+    <div class="timing-grid">
+      <div class="timing-card open">
+        <div class="timing-day">Mon</div>
+        <div class="timing-time">10am – 2pm<br/>5pm – 9pm</div>
+      </div>
+      <div class="timing-card open">
+        <div class="timing-day">Tue</div>
+        <div class="timing-time">10am – 2pm<br/>5pm – 9pm</div>
+      </div>
+      <div class="timing-card open">
+        <div class="timing-day">Wed</div>
+        <div class="timing-time">10am – 2pm<br/>5pm – 9pm</div>
+      </div>
+      <div class="timing-card open">
+        <div class="timing-day">Thu</div>
+        <div class="timing-time">10am – 2pm<br/>5pm – 9pm</div>
+      </div>
+      <div class="timing-card open">
+        <div class="timing-day">Fri</div>
+        <div class="timing-time">10am – 12pm<br/>5pm – 9pm</div>
+      </div>
+      <div class="timing-card open">
+        <div class="timing-day">Sat</div>
+        <div class="timing-time">10am – 9pm</div>
+      </div>
+      <div class="timing-card">
+        <div class="timing-day">Sun</div>
+        <div class="timing-closed">Closed</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-info">
+      <div class="section-eyebrow">Get In Touch</div>
+      <h2 class="section-title">Book Your Appointment</h2>
+      <p>Reach out via WhatsApp, call, or fill the form. We'll confirm your slot within minutes.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Location</h4>
+            <p>Satyana Road, Near Allied Hospital, Faisalabad</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <h4>Phone</h4>
+            <p>0300-1234567</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">💬</div>
+          <div>
+            <h4>WhatsApp</h4>
+            <p>0300-1234567 (Preferred for appointments)</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <h4>Email</h4>
+            <p>info@drahmedclinic.pk</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form" id="appointment-form">
+      <h3>Request an Appointment</h3>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" id="f-name" placeholder="Muhammad Ali" />
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" id="f-phone" placeholder="0300-0000000" />
+      </div>
+      <div class="form-group">
+        <label>Service Needed</label>
+        <select id="f-service">
+          <option>General Consultation</option>
+          <option>Cardiac Checkup</option>
+          <option>Lab Tests</option>
+          <option>Vaccination</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Preferred Time</label>
+        <select id="f-time">
+          <option>Morning (10AM – 2PM)</option>
+          <option>Evening (5PM – 9PM)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message (Optional)</label>
+        <textarea id="f-msg" placeholder="Any specific concerns..."></textarea>
+      </div>
+      <button class="form-submit" onclick="sendToWhatsApp()">Send via WhatsApp 💬</button>
+      <p style="text-align:center; font-size:0.75rem; color:var(--muted); margin-top:12px;">
+        Appointment request will be sent directly to clinic's WhatsApp
+      </p>
+    </div>
+
+    <script>
+      function sendToWhatsApp() {
+        const name    = document.getElementById('f-name').value.trim();
+        const phone   = document.getElementById('f-phone').value.trim();
+        const service = document.getElementById('f-service').value;
+        const time    = document.getElementById('f-time').value;
+        const msg     = document.getElementById('f-msg').value.trim();
+
+        if (!name || !phone) {
+          alert('Please enter your name and phone number.');
+          return;
+        }
+
+        const clinicWhatsApp = '923141458867'; // 👈 Clinic ka number yahan lagao
+
+        const text = 
+`🏥 *New Appointment Request*
+
+👤 *Name:* ${name}
+📞 *Phone:* ${phone}
+🩺 *Service:* ${service}
+⏰ *Preferred Time:* ${time}
+💬 *Message:* ${msg || 'None'}
+
+_Sent via Dr. Ahmed Clinic Website_`;
+
+        const encoded = encodeURIComponent(text);
+        window.open(`https://wa.me/${clinicWhatsApp}?text=${encoded}`, '_blank');
+      }
+    </script>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Dr. <span>Ahmed</span> Clinic</div>
+    <div class="footer-copy">© 2024 Dr. Ahmed Clinic, Faisalabad. All rights reserved.</div>
+    <a href="https://wa.me/923001234567" class="footer-whatsapp">💬 WhatsApp Us</a>
+  </footer>
+
+</body>
+</html>
