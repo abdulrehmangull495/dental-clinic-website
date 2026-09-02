@@ -503,14 +503,10 @@
       gap: 80px;
       align-items: start;
     }
-
     .contact-info h2 { margin-bottom: 14px; }
     .contact-info > p { color: var(--muted); margin-bottom: 40px; font-size: 0.95rem; line-height: 1.75; }
-
     .contact-items { display: flex; flex-direction: column; gap: 22px; }
-
     .contact-item { display: flex; align-items: flex-start; gap: 16px; }
-
     .contact-icon {
       width: 42px; height: 42px;
       background: var(--white);
@@ -522,17 +518,20 @@
       flex-shrink: 0;
       box-shadow: 0 2px 8px rgba(26,74,30,0.08);
     }
-
-    .contact-item h4 { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
-    .contact-item p { color: var(--dark); font-size: 0.9rem; }
-
+    .contact-item h4 { font-size: 0.75rem; 
+      color: var(--muted);
+       text-transform: uppercase;
+        letter-spacing: 0.08em;
+         margin-bottom: 3px; }
+    .contact-item p { color: var(--dark); 
+      font-size: 0.9rem;
+     }
     .contact-form {
       background: var(--white);
       border-radius: 20px;
       padding: 44px 40px;
       box-shadow: 0 20px 60px rgba(26,74,30,0.08);
     }
-
     .contact-form h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1.3rem;
@@ -540,9 +539,7 @@
       color: var(--dark);
       margin-bottom: 28px;
     }
-
     .form-group { margin-bottom: 18px; }
-
     .form-group label {
       display: block;
       font-size: 0.75rem;
@@ -552,7 +549,6 @@
       margin-bottom: 7px;
       font-weight: 500;
     }
-
     .form-group input,
     .form-group select,
     .form-group textarea {
@@ -567,13 +563,10 @@
       outline: none;
       transition: border-color 0.2s;
     }
-
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus { border-color: var(--green); }
-
     .form-group textarea { height: 90px; resize: none; }
-
     .form-submit {
       width: 100%;
       background: var(--green);
@@ -589,9 +582,7 @@
       margin-top: 8px;
       letter-spacing: 0.02em;
     }
-
     .form-submit:hover { background: var(--green-mid); }
-
     /* FOOTER */
     footer {
       background: var(--dark);
@@ -600,17 +591,14 @@
       align-items: center;
       justify-content: space-between;
     }
-
     .footer-logo {
       font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
       font-weight: 700;
       color: var(--white);
     }
-
     .footer-logo span { color: var(--green-accent); font-style: italic; }
     .footer-copy { color: rgba(255,255,255,0.4); font-size: 0.78rem; }
-
     .footer-whatsapp {
       display: flex;
       align-items: center;
@@ -624,9 +612,7 @@
       font-weight: 500;
       transition: opacity 0.2s;
     }
-
     .footer-whatsapp:hover { opacity: 0.85; }
-
     /* RESPONSIVE */
     .hamburger {
       display: none;
@@ -647,7 +633,6 @@
     .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.active span:nth-child(2) { opacity: 0; }
     .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
     .mobile-menu {
       display: none;
       position: fixed;
@@ -678,18 +663,15 @@
       margin-top: 12px;
       font-weight: 500;
     }
-
     @media (max-width: 900px) {
       nav { padding: 16px 24px; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
-
       .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 36px; }
       .hero::before { display: none; }
       .hero-right { background: var(--green); border-radius: 16px; padding: 32px 24px; }
       .hero h1 { font-size: 2.4rem; }
       .hero-stats { gap: 24px; flex-wrap: wrap; }
-
       section { padding: 60px 24px; }
       #doctor { grid-template-columns: 1fr; gap: 36px; padding: 60px 24px; }
       #contact { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
@@ -699,7 +681,6 @@
       .contact-form { padding: 32px 24px; }
       footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
     }
-
     @media (max-width: 500px) {
       nav { padding: 14px 20px; }
       .hero { padding: 90px 20px 50px; }
