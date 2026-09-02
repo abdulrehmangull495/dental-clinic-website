@@ -722,7 +722,6 @@
   </style>
 </head>
 <body>
-
   <!-- NAV -->
   <nav>
     <div class="nav-logo">Dr. <span>Ahmed</span> Clinic</div>
@@ -737,7 +736,6 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
-
   <div class="mobile-menu" id="mobileMenu">
     <a href="#services" onclick="closeMenu()">Services</a>
     <a href="#doctor" onclick="closeMenu()">Doctor</a>
@@ -745,7 +743,6 @@
     <a href="#contact" onclick="closeMenu()">Contact</a>
     <a href="#appointment-form" class="mobile-cta" onclick="closeMenu()">Book Appointment</a>
   </div>
-
   <script>
     function toggleMenu() {
       document.getElementById('hamburger').classList.toggle('active');
@@ -756,7 +753,6 @@
       document.getElementById('mobileMenu').classList.remove('open');
     }
   </script>
-
   <!-- HERO -->
   <div class="hero">
     <div class="hero-left">
@@ -801,7 +797,6 @@
       </div>
     </div>
   </div>
-
   <!-- SERVICES -->
   <section id="services">
     <div class="services-top">
@@ -835,16 +830,15 @@
       <div class="service-card">
         <div class="service-icon">🫁</div>
         <h3>Chest & Respiratory</h3>
-        <p>Treatment for asthma, chest infections, shortness of breath, and related conditions.</p>
+        <p>Treatment for asthma, chest infections, shortness of breath and related conditions.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">📋</div>
         <h3>Medical Certificates</h3>
-        <p>Fitness certificates for employment, school, and government requirements.</p>
+        <p>Fitness certificates for employment, school and government requirements.</p>
       </div>
     </div>
   </section>
-
   <!-- DOCTOR -->
   <section id="doctor">
     <div class="doctor-visual">
@@ -873,7 +867,6 @@
       </ul>
     </div>
   </section>
-
   <!-- TIMING -->
   <section id="timing">
     <div class="timing-header">
@@ -912,7 +905,6 @@
       </div>
     </div>
   </section>
-
   <!-- CONTACT -->
   <section id="contact">
     <div class="contact-info">
@@ -986,7 +978,6 @@
         Appointment request will be sent directly to clinic's WhatsApp
       </p>
     </div>
-
     <script>
       function sendToWhatsApp() {
         const name    = document.getElementById('f-name').value.trim();
@@ -999,7 +990,6 @@
           alert('Please enter your name and phone number.');
           return;
         }
-
         const clinicWhatsApp = '923141458867'; // 👈 Clinic ka number yahan lagao
 
         const text = 
@@ -1018,13 +1008,11 @@ _Sent via Dr. Ahmed Clinic Website_`;
       }
     </script>
   </section>
-
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo">Dr. <span>Ahmed</span> Clinic</div>
     <div class="footer-copy">© 2024 Dr. Ahmed Clinic, Faisalabad. All rights reserved.</div>
     <a href="https://wa.me/923001234567" class="footer-whatsapp">💬 WhatsApp Us</a>
   </footer>
-
 </body>
 </html>
