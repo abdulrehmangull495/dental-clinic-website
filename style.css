@@ -317,13 +317,11 @@
       margin-bottom: 56px;
       gap: 40px;
     }
-
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
-
     .service-card {
       background: var(--bg);
       border: 1px solid var(--border);
@@ -333,17 +331,18 @@
       position: relative;
       overflow: hidden;
     }
-
     .service-card:hover {
       background: var(--green);
       border-color: var(--green);
       transform: translateY(-4px);
     }
-
     .service-card:hover h3,
-    .service-card:hover p { color: var(--white); }
-    .service-card:hover .service-icon { background: rgba(255,255,255,0.15); }
-
+    .service-card:hover p { 
+      color: var(--white); 
+    }
+    .service-card:hover .service-icon {
+       background: rgba(255,255,255,0.15);
+       }
     .service-icon {
       width: 50px; height: 50px;
       background: var(--green-light);
@@ -355,7 +354,6 @@
       margin-bottom: 22px;
       transition: background 0.3s;
     }
-
     .service-card h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
@@ -364,9 +362,12 @@
       margin-bottom: 10px;
       transition: color 0.3s;
     }
-
-    .service-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.65; transition: color 0.3s; }
-
+    .service-card p {
+       color: var(--muted);
+        font-size: 0.88rem; 
+        line-height: 1.65;
+         transition: color 0.3s;
+         }
     /* DOCTOR */
     #doctor {
       background: var(--green-light);
@@ -375,9 +376,9 @@
       gap: 80px;
       align-items: center;
     }
-
-    .doctor-visual { position: relative; }
-
+    .doctor-visual { 
+      position: relative;
+     }
     .doctor-card {
       background: var(--white);
       border-radius: 20px;
@@ -385,10 +386,10 @@
       text-align: center;
       box-shadow: 0 20px 60px rgba(26,74,30,0.1);
     }
-
     .doctor-avatar {
       width: 96px; height: 96px;
-      background: linear-gradient(135deg, var(--green), var(--green-mid));
+      background: linear-gradient(135deg, var(--green),
+       var(--green-mid));
       border-radius: 50%;
       margin: 0 auto 20px;
       display: flex;
@@ -396,7 +397,6 @@
       justify-content: center;
       font-size: 2.4rem;
     }
-
     .doctor-name {
       font-family: 'Playfair Display', serif;
       font-size: 1.3rem;
@@ -404,11 +404,18 @@
       color: var(--dark);
       margin-bottom: 6px;
     }
+    .doctor-spec { color: var(--green-accent); 
+      font-size: 0.82rem; font-weight: 500;
+       margin-bottom: 24px;
+        letter-spacing: 0.04em;
+       }
 
-    .doctor-spec { color: var(--green-accent); font-size: 0.82rem; font-weight: 500; margin-bottom: 24px; letter-spacing: 0.04em; }
-
-    .doctor-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-
+    .doctor-tags { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 8px;
+      justify-content: center;
+     }
     .tag {
       background: var(--green-light);
       color: var(--green);
@@ -418,11 +425,20 @@
       font-weight: 500;
       border: 1px solid var(--border);
     }
+    .doctor-info h2 {
+       margin-bottom: 18px;
+       }
+    .doctor-info > p { 
+      color: var(--muted);
+       line-height: 1.8;
+        margin-bottom: 32px; 
+        font-size: 0.95rem;}
 
-    .doctor-info h2 { margin-bottom: 18px; }
-    .doctor-info > p { color: var(--muted); line-height: 1.8; margin-bottom: 32px; font-size: 0.95rem; }
-
-    .qualifications { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .qualifications { 
+      list-style: none;
+       display: flex; 
+       flex-direction: column; 
+       gap: 14px; }
 
     .qualifications li {
       display: flex;
