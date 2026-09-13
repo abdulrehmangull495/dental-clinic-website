@@ -493,9 +493,16 @@
       margin-bottom: 10px;
     }
 
-    .timing-time { color: var(--green-accent); font-size: 0.75rem; font-weight: 500; line-height: 1.7; }
-    .timing-closed { color: var(--muted); font-size: 0.8rem; }
-
+    .timing-time {
+       color: var(--green-accent);
+        font-size: 0.75rem;
+         font-weight: 500;
+          line-height: 1.7;
+         }
+    .timing-closed {
+       color: var(--muted); 
+       font-size: 0.8rem;
+       }
     /* CONTACT */
     #contact {
       background: var(--green-light);
@@ -504,10 +511,25 @@
       gap: 80px;
       align-items: start;
     }
-    .contact-info h2 { margin-bottom: 14px; }
-    .contact-info > p { color: var(--muted); margin-bottom: 40px; font-size: 0.95rem; line-height: 1.75; }
-    .contact-items { display: flex; flex-direction: column; gap: 22px; }
-    .contact-item { display: flex; align-items: flex-start; gap: 16px; }
+    .contact-info h2 {
+       margin-bottom: 14px;
+       }
+    .contact-info > p { 
+      color: var(--muted); 
+      margin-bottom: 40px; font-size:
+       0.95rem;
+       line-height: 1.75;
+     }
+    .contact-items { 
+      display: flex;
+       flex-direction:
+        column; gap: 22px;
+       }
+    .contact-item {
+       display: flex; 
+       align-items: flex-start; 
+       gap: 16px;
+       }
     .contact-icon {
       width: 42px; height: 42px;
       background: var(--white);
