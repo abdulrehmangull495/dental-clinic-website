@@ -432,14 +432,14 @@
       color: var(--muted);
        line-height: 1.8;
         margin-bottom: 32px; 
-        font-size: 0.95rem;}
-
+        font-size: 0.95rem;
+        }
     .qualifications { 
       list-style: none;
        display: flex; 
        flex-direction: column; 
-       gap: 14px; }
-
+       gap: 14px;
+       }
     .qualifications li {
       display: flex;
       align-items: flex-start;
@@ -448,7 +448,6 @@
       font-size: 0.9rem;
       line-height: 1.5;
     }
-
     .qualifications li::before {
       content: '✓';
       color: var(--green-accent);
@@ -465,16 +464,16 @@
     }
 
     /* TIMING */
-    #timing { background: var(--white); }
-
-    .timing-header { margin-bottom: 52px; }
-
+    #timing { background: var(--white);
+     }
+    .timing-header {
+       margin-bottom: 52px; 
+    }
     .timing-grid {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
       gap: 12px;
     }
-
     .timing-card {
       background: var(--bg);
       border: 1px solid var(--border);
@@ -482,8 +481,9 @@
       padding: 24px 16px;
       text-align: center;
     }
-
-    .timing-card.open { border-color: var(--green); }
+    .timing-card.open { 
+      border-color: var(--green); 
+    }
 
     .timing-day {
       font-family: 'Playfair Display', serif;
