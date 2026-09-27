@@ -562,7 +562,9 @@
       color: var(--dark);
       margin-bottom: 28px;
     }
-    .form-group { margin-bottom: 18px; }
+    .form-group {
+       margin-bottom: 18px;
+       }
     .form-group label {
       display: block;
       font-size: 0.75rem;
@@ -588,8 +590,12 @@
     }
     .form-group input:focus,
     .form-group select:focus,
-    .form-group textarea:focus { border-color: var(--green); }
-    .form-group textarea { height: 90px; resize: none; }
+    .form-group textarea:focus { 
+      border-color: var(--green);
+     }
+    .form-group textarea { 
+      height: 90px; resize: none; 
+    }
     .form-submit {
       width: 100%;
       background: var(--green);
@@ -605,7 +611,9 @@
       margin-top: 8px;
       letter-spacing: 0.02em;
     }
-    .form-submit:hover { background: var(--green-mid); }
+    .form-submit:hover {
+       background: var(--green-mid);
+       }
     /* FOOTER */
     footer {
       background: var(--dark);
@@ -620,8 +628,12 @@
       font-weight: 700;
       color: var(--white);
     }
-    .footer-logo span { color: var(--green-accent); font-style: italic; }
-    .footer-copy { color: rgba(255,255,255,0.4); font-size: 0.78rem; }
+    .footer-logo span {
+       color: var(--green-accent);
+        font-style: italic; }
+    .footer-copy { color: rgba(255,255,255,0.4);
+       font-size: 0.78rem;
+       }
     .footer-whatsapp {
       display: flex;
       align-items: center;
@@ -635,7 +647,9 @@
       font-weight: 500;
       transition: opacity 0.2s;
     }
-    .footer-whatsapp:hover { opacity: 0.85; }
+    .footer-whatsapp:hover {
+       opacity: 0.85;
+       }
     /* RESPONSIVE */
     .hamburger {
       display: none;
@@ -653,9 +667,15 @@
       border-radius: 2px;
       transition: all 0.3s;
     }
-    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.active span:nth-child(2) { opacity: 0; }
-    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .hamburger.active span:nth-child(1) {
+       transform: translateY(7px) rotate(45deg); 
+      }
+    .hamburger.active span:nth-child(2) { 
+      opacity: 0;
+     }
+    .hamburger.active span:nth-child(3) {
+       transform: translateY(-7px) rotate(-45deg);
+       }
     .mobile-menu {
       display: none;
       position: fixed;
