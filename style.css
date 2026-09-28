@@ -2,7 +2,6 @@
      padding: 0;
     box-sizing: border-box;
  }
-
     :root {
       --bg: #f9faf7;
       --dark: #0d1f0f;
@@ -16,7 +15,6 @@
       --white: #ffffff;
       --border: #d4e0d5;
     }
-
     html { 
         scroll-behavior: smooth;
          }
@@ -69,7 +67,6 @@
     .nav-links a:hover { 
       color: var(--green);
      }
-
     .nav-cta {
       background: var(--green) !important;
       color: var(--white) !important;
@@ -409,7 +406,6 @@
        margin-bottom: 24px;
         letter-spacing: 0.04em;
        }
-
     .doctor-tags { 
       display: flex; 
       flex-wrap: wrap; 
