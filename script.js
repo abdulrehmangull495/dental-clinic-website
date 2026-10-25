@@ -10,7 +10,6 @@ function sendToWhatsApp() {
           return;
         }
         const clinicWhatsApp = '923141458867'; // 👈 Clinic ka number yahan lagao
-
         const text = 
 `🏥 *New Appointment Request*
 
@@ -21,7 +20,6 @@ function sendToWhatsApp() {
 💬 *Message:* ${msg || 'None'}
 
 _Sent via Dr. Ahmed Clinic Website_`;
-
         const encoded = encodeURIComponent(text);
         window.open(`https://wa.me/${clinicWhatsApp}?text=${encoded}`, '_blank');
       }
